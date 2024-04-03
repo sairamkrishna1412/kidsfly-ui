@@ -1,0 +1,55 @@
+.block_1_button {
+  border-bottom: 2px solid #fff;
+  overflow: hidden;
+  transform: scaleX(0);
+}
+
+.block_1_button_txt {
+  transform: translateY(250%);
+}
+
+.block_1:hover {
+  background-color: rgba(134, 144, 223, 0.9);
+}
+
+.block_1:hover .block_1_txt {
+  color: #fff;
+}
+
+.block_1:hover .block_1_button {
+  transform: scaleX(1);
+}
+
+.block_1:hover .block_1_button_txt {
+  transform: translateY(0%);
+}
+
+.tran_03s {
+  transition: all 0.3s;
+}
+
+.tran_04s {
+  transition: all 0.4s;
+}
+
+.tran_05s {
+  transition: all 0.5s;
+}
+
+.tran_09s {
+  transition: all 0.9s;
+}
+
+.pointer_parent * {
+  cursor: pointer;
+}
+
+.list_items * {
+  border-bottom: 2px solid transparent;
+  transition: all 0.7s;
+}
+
+.list_items *:hover {
+  color: rgb(17 24 39 /1);
+  border-bottom: 1px solid rgb(17 24 39 /1);
+}
