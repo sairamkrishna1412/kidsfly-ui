@@ -1,18 +1,17 @@
-import Image from 'next/image';
-import styles from './category.module.css';
+import Image from "next/image";
+import styles from "./category.module.css";
+import { getRandomColor } from "@/app/util/Random";
 
-interface CategoryProps {
-  name: string;
-  desc: string;
-  image: any;
-}
-
-export default function Category(props: CategoryProps) {
+export default function Category(props: { name: any; desc: any; image: any }) {
   const { name, desc, image } = props;
+
+  const randomColor = getRandomColor();
   return (
-    <div className="w-[49vh] h-[33vh] border border-gray-200 flex cursor-pointer relative">
+    <div
+      className={` w-[49vh] h-[33vh] border border-gray-200 flex cursor-pointer relative`}
+    >
       <div
-        className={`${styles.block_1} ${styles.tran_03s} absolute inset-0 h-full pl-[3vh] flex flex-col justify-around`}
+        className={`hover:bg-app_purple hover:bg-${randomColor} ${styles.block_1} ${styles.tran_03s} absolute inset-0 h-full pl-[3vh] flex flex-col justify-around`}
       >
         <div>
           <h2

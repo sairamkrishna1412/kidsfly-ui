@@ -1,0 +1,43 @@
+.zoom_image_block {
+  overflow: hidden;
+}
+
+.zoom_image {
+  transform: scale(1);
+}
+
+.zoom_image_button {
+  transform: translateY(250%);
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.zoom_image_block:hover .zoom_image {
+  transform: scale(1.05);
+}
+
+.zoom_image_block:hover .zoom_image_button {
+  transform: translateY(0%);
+}
+
+.zoom_image_button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.tran_03s {
+  transition: all 0.3s;
+}
+
+.tran_04s {
+  transition: all 0.4s;
+}
+
+.tran_05s {
+  transition: all 0.5s;
+}
+
+.tran_09s {
+  transition: all 0.9s;
+}

@@ -8,9 +8,9 @@
   transform: translateY(250%);
 }
 
-.block_1:hover {
+/* .block_1:hover {
   background-color: rgba(134, 144, 223, 0.9);
-}
+} */
 
 .block_1:hover .block_1_txt {
   color: #fff;
