@@ -1,0 +1,13 @@
+.pointer_parent * {
+  cursor: pointer;
+}
+
+.list_items * {
+  border-bottom: 2px solid transparent;
+  transition: all 0.7s;
+}
+
+.list_items *:hover {
+  color: rgb(17 24 39 /1);
+  border-bottom: 1px solid rgb(17 24 39 /1);
+}

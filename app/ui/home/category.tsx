@@ -13,32 +13,34 @@ export default function Category(props: { name: any; desc: any; image: any }) {
       <div
         className={`hover:bg-app_purple hover:bg-${randomColor} ${styles.block_1} ${styles.tran_03s} absolute inset-0 h-full pl-[3vh] flex flex-col justify-around`}
       >
-        <div>
-          <h2
-            className={`${styles.block_1_txt} ${styles.tran_03s} text-2xl font-bold mb-1 text-gray-900`}
-          >
-            {name}
-          </h2>
-          <p
-            className={`${styles.block_1_txt} ${styles.tran_03s} text-sm text-gray-600 mb-4`}
-          >
-            {desc}
-          </p>
-        </div>
-        <div>
-          <button
-            className={`${styles.block_1_button} ${styles.tran_05s} text-white text-left`}
-          >
-            <p
-              className={`${styles.block_1_button_txt} ${styles.tran_09s} text-sm font-bold`}
+        <div className="w-[25%]">
+          <div>
+            <h2
+              className={`${styles.block_1_txt} ${styles.tran_03s} text-2xl font-bold mb-1 text-gray-900`}
             >
-              SHOP NOW
+              {name}
+            </h2>
+            <p
+              className={`${styles.block_1_txt} ${styles.tran_03s} text-sm text-gray-600 mb-4`}
+            >
+              {desc}
             </p>
-          </button>
+          </div>
+          <div>
+            <button
+              className={`${styles.block_1_button} ${styles.tran_05s} text-white text-left`}
+            >
+              <p
+                className={`${styles.block_1_button_txt} ${styles.tran_09s} text-sm font-bold`}
+              >
+                SHOP NOW
+              </p>
+            </button>
+          </div>
         </div>
       </div>
       <Image
-        className="w-[75%] ml-auto h-full"
+        className="w-[70%] ml-auto h-full"
         src={image}
         alt="CATEGORY IMAGE"
       ></Image>

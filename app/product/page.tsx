@@ -14,6 +14,7 @@ import { MdExpandCircleDown } from "react-icons/md";
 import Dropdown from "../ui/common/dropdown/dropdown";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
+import styles from "./product.module.css";
 
 export default function Product() {
   var sliderSettings = {
@@ -145,7 +146,33 @@ export default function Product() {
             </div>
           </div>
         </div>
-        <div className="pb-96 bg-black"></div>
+        <div className="flex flex-col items-center border pb-10 ">
+          <div className="w-[100%] flex justify-center relative">
+            <div
+              className={`w-[40%] flex justify-between pt-10 mb-16 font-normal text-lg ${styles.mid_line}`}
+            >
+              <h3 className="font-semibold">Description</h3>
+              <h3>Additional Information</h3>
+              <h3>Reviews</h3>
+            </div>
+          </div>
+          <div className="w-[70%] text-gray-700">
+            <p>
+              Aenean sit amet gravida nisi. Nam fermentum est felis, quis
+              feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque
+              luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi
+              elementum sapien rhoncus pretium maximus. Nulla lectus enim,
+              cursus et elementum sed, sodales vitae eros. Ut ex quam, porta
+              consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac
+              libero varius molestie. Aenean tempor sit amet orci nec iaculis.
+              Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet
+              consequat, purus nunc porta lacus, vel efficitur tellus augue in
+              ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor
+              erat. Duis in egestas nunc.
+            </p>
+          </div>
+        </div>
+        <div className="mt-14 pb-96 bg-black"></div>
       </div>
     </div>
   );

@@ -1,0 +1,19 @@
+.mid_line:before {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  height: 1px;
+  width: 335px;
+  background: #e1e1e1;
+  content: "";
+}
+
+.mid_line:after {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  height: 1px;
+  width: 335px;
+  background: #e1e1e1;
+  content: "";
+}

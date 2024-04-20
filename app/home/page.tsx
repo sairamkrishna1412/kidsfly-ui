@@ -20,8 +20,29 @@ import Category from "../ui/home/category";
 import Product from "../ui/home/product/product";
 import { IoFilterOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
+import ProductSection from "../ui/home/productSection/productSection";
 
-const HomePage = () => {
+async function getData() {
+  const res = await fetch("http://localhost:8081/home/getHomePage", {
+    cache: "no-store",
+    // next: { revalidate: 3600 },
+  });
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+export default async function HomePage() {
+  const data = await getData();
+
+  console.log(data);
+
   return (
     <div className={`${poppins.className} bg-white text-gray-900`}>
       <div className="flex justify-between items-center shadow-md py-2 px-16 h-[10vh]">
@@ -199,7 +220,16 @@ const HomePage = () => {
         </div>
       </div>
       <div className="container 2xl:max-w-[80%] mx-auto pt-[10vh] pb-[7vh] flex justify-between">
-        <div className="w-[49vh] h-[33vh] border border-gray-200 flex cursor-pointer relative">
+        {data?.category &&
+          data.category.map((category: any, i: number) => (
+            <Category
+              key={i}
+              name={category.title}
+              desc={category.description}
+              image={categoryCar}
+            ></Category>
+          ))}
+        {/* <div className="w-[49vh] h-[33vh] border border-gray-200 flex cursor-pointer relative">
           <div
             className={`${styles.block_1} ${styles.tran_03s} absolute inset-0 h-full pl-[3vh] flex flex-col justify-around`}
           >
@@ -242,8 +272,12 @@ const HomePage = () => {
           name={"Jeep"}
           desc={"9000 onwards"}
           image={categoryJeep}
-        ></Category>
+        ></Category> */}
       </div>
+      {data?.products &&
+        data.products.map((product: any, i: number) => (
+          <ProductSection key={i} section={product}></ProductSection>
+        ))}
       <section className="container 2xl: max-w-[80%] mx-auto pt-[10vh] pb-[7vh]">
         <div className="pb-[2vh]">
           <h2
@@ -303,6 +337,4 @@ const HomePage = () => {
       <div className="py-[100vh] bg-black"></div>
     </div>
   );
-};
-
-export default HomePage;
+}
